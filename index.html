@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>App ya Michango ya Kikundi</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#1e8e3e">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>App ya Michango ya Kikundi</h1>
+            <p class="subtitle">Offline • Rahisi • Kwa Kiswahili</p>
+        </header>
+
+        <section class="card">
+            <h2>Taarifa za Kikundi</h2>
+            <label>Jina la Kikundi</label>
+            <input type="text" id="jinaKikundi" placeholder="Mfano: Kikundi cha Wana Humura" oninput="hifadhiKikundi()">
+            <p class="small">Kikundi: <span id="onyeshaKikundi">Bado halijawekwa</span></p>
+        </section>
+
+        <section class="card">
+            <h2>Chuja kwa Tarehe</h2>
+            <div class="row">
+                <input type="date" id="chaguaTarehe">
+                <button onclick="onyeshaKwaTarehe()">Onyesha Ripoti</button>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Ongeza Michango</h2>
+            <label>Jina</label>
+            <input type="text" id="mwanachama" placeholder="Jina la mchangiaji">
+            <label>Kiasi (Tsh)</label>
+            <input type="number" id="kiasi" placeholder="Kiasi">
+            <div class="row">
+                <button id="ongezaBtn" onclick="ongezaMichango()">Ongeza Michango</button>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Rekodi Matumizi</h2>
+            <label>Maelezo</label>
+            <input type="text" id="maelezo" placeholder="Maelezo ya matumizi">
+            <label>Kiasi (Tsh)</label>
+            <input type="number" id="matumizi" placeholder="Kiasi">
+            <div class="row">
+                <button id="ongezaMatumiziBtn" onclick="ongezaMatumizi()">Ongeza Matumizi</button>
+            </div>
+        </section>
+
+        <section class="card actions">
+            <h2>Ripoti & Matendo</h2>
+            <div class="row wrap">
+                <button onclick="onyeshaSalio()">Onyesha Ripoti ya Jumla</button>
+                <button onclick="futaData()">Futa Data Zote</button>
+                <button onclick="exportCSV()">Export CSV</button>
+            </div>
+        </section>
+
+        <section id="ripoti" class="card output"></section>
+
+        <footer>
+            <small>App iliyotengenezwa kwa matumizi ya ndani. Data iko kwenye simu yako pekee.</small>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js').catch(err=>console.log('SW error', err));
+      }
+    </script>
+</body>
+</html>

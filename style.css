@@ -1,0 +1,27 @@
+:root{
+  --green:#1e8e3e;
+  --green-dark:#16662b;
+  --muted:#f3f7f3;
+  --card:#ffffff;
+  --text:#1b1b1b;
+}
+
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, Arial, sans-serif; background:var(--muted); color:var(--text); margin:0; padding:16px}
+.container{max-width:820px;margin:0 auto}
+header{background:linear-gradient(90deg,var(--green),var(--green-dark));color:white;padding:16px;border-radius:8px}
+header h1{margin:0;font-size:20px}
+header .subtitle{margin:6px 0 0;font-size:13px;opacity:0.95}
+.card{background:var(--card);padding:12px;border-radius:8px;margin-top:12px;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.card h2{margin:0 0 8px;font-size:16px}
+label{display:block;font-size:13px;margin-top:8px}
+input[type=text], input[type=number], input[type=date]{width:100%;padding:8px;margin-top:6px;border:1px solid #ddd;border-radius:6px}
+.row{display:flex;gap:8px;align-items:center}
+.row.wrap{flex-wrap:wrap}
+button{background:var(--green);color:white;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
+button:hover{background:var(--green-dark)}
+.output{white-space:pre-wrap;overflow:auto}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid #eee;padding:8px;text-align:left}
+footer{margin-top:16px;text-align:center;color:#666;font-size:13px}
+.small{font-size:12px;color:#666}
